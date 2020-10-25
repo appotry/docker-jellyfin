@@ -30,6 +30,8 @@ RUN \
 	${JELLYFIN} \
 	libfontconfig1 \
 	libfreetype6 \
+	intel-media-va-driver-non-free \
+	vainfo \
 	libssl1.1 && \
  echo "**** cleanup ****" && \
  rm -rf \
