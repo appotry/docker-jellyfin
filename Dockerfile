@@ -27,12 +27,10 @@ RUN \
  apt-get update && \
  apt-get install -y --no-install-recommends \
 	at \
-	i965-va-driver \
 	${JELLYFIN} \
 	libfontconfig1 \
 	libfreetype6 \
-	libssl1.1 \
-	mesa-va-drivers && \
+	libssl1.1 && \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/* \
