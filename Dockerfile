@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM lsiobase/ubuntu:focal
 
 # set version label
 ARG BUILD_DATE
