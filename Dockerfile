@@ -1,10 +1,10 @@
 FROM lsiobase/ubuntu:focal
 
 # set version label
-ARG BUILD_DATE
+# ARG BUILD_DATE
 ARG VERSION
 ARG JELLYFIN_RELEASE
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:-202011142136"
 LABEL maintainer="thelamer"
 
 # environment settings
