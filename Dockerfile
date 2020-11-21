@@ -4,8 +4,8 @@ FROM lsiobase/ubuntu:focal
 # ARG BUILD_DATE
 ARG VERSION
 ARG JELLYFIN_RELEASE
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:-202011210950"
-LABEL maintainer="thelamer"
+LABEL build_version="sleepgod version:10.6.4-1 Build-date:202011211020"
+LABEL maintainer="sellpgod"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
