@@ -2,10 +2,10 @@ FROM lsiobase/ubuntu:focal
 
 # set version label
 # ARG BUILD_DATE
-ARG VERSION
-ARG JELLYFIN_RELEASE
-LABEL build_version="sleepgod version:10.6.4-1 Build-date:202011211020"
-LABEL maintainer="sellpgod"
+# ARG VERSION
+# ARG JELLYFIN_RELEASE
+LABEL build_version="sleepgod version:10.6.4-1 Build-date:202011280839"
+LABEL maintainer="sleepgod"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
