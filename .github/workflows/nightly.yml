@@ -1,9 +1,9 @@
-name: Build jellyfin latest
+name: Build jellyfin nightly
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 22 * * 5
+    - cron: 0 22 * * *
         
 jobs:
   package-trigger-scheduler:
