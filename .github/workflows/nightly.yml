@@ -1,0 +1,19 @@
+name: Build jellyfin latest
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 22 * * 5
+        
+jobs:
+  package-trigger-scheduler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      
+      - name: Package Trigger Scheduler
+        run: |
+          echo "**** Notifying Discord ****"
+          curl -H "Content-Type: application/json" --data '{"docker_tag": "nightly"}' -X POST https://hub.docker.com/api/build/v1/source/37845e6a-9178-42a1-9fdb-f74e1698f35c/trigger/dc84829d-2e4b-4ffe-9341-b5030bd688d9/call/
