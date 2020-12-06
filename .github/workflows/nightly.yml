@@ -10,10 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Initialization environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+        
       - name: Checkout
         uses: actions/checkout@main
+        with:
+          ref: 'nightly'
+      - run: |
+          dt=`date +%Y%m%d%H%M%S`
+          echo $dt
+          sed -i "7c LABEL build_version=\"sleepgod version:nightly Build-date:$dt\"" Dockerfile
+          git commit -m "build_version"
+          git push
       
-      - name: Package Trigger Scheduler
+      - name: Docker Trigger Scheduler
         run: |
           echo "**** Notifying Discord ****"
           curl -H "Content-Type: application/json" --data '{"docker_tag": "nightly"}' -X POST https://hub.docker.com/api/build/v1/source/37845e6a-9178-42a1-9fdb-f74e1698f35c/trigger/dc84829d-2e4b-4ffe-9341-b5030bd688d9/call/
