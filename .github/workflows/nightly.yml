@@ -6,7 +6,7 @@ on:
     - cron: 0 22 * * *
         
 jobs:
-  package-trigger-scheduler:
+  Docker-trigger-scheduler:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +26,7 @@ jobs:
           sed -i "7c LABEL build_version=\"sleepgod version:nightly Build-date:$dt\"" Dockerfile
           git config user.name sleepgod
           git config user.email dingwenxuan@gmail.com
+          git add .
           git commit -m "build_version"
           git push
       
