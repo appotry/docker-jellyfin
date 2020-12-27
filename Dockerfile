@@ -27,6 +27,7 @@ RUN \
  fi && \
  apt-get update && \
  apt-get install -y --no-install-recommends \
+ 	xfonts-wqy \
 	at \
 	${JELLYFIN} \
 	jellyfin-ffmpeg \
