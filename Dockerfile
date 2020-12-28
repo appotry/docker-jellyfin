@@ -27,8 +27,6 @@ RUN \
  fi && \
  apt-get update && \
  apt-get install -y --no-install-recommends \
- 	xfonts-wqy \
-	fonts-wqy-zenhei \
 	at \
 	${JELLYFIN} \
 	jellyfin-ffmpeg \
