@@ -28,6 +28,8 @@ RUN \
  apt-get update && \
  apt-get install -y --no-install-recommends \
 	at \
+	xfonts-wqy \
+	fonts-wqy-zenhei \
 	${JELLYFIN} \
 	jellyfin-ffmpeg \
 	jellyfin-server \
