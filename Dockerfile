@@ -31,6 +31,7 @@ RUN \
 	at \
 	xfonts-wqy \
 	fonts-wqy-zenhei \
+	fonts-wqy-microhei \
 	${JELLYFIN} \
 	libfontconfig1 \
 	libfreetype6 \
