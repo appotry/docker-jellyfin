@@ -30,6 +30,7 @@ RUN \
 	at \
 	xfonts-wqy \
 	fonts-wqy-zenhei \
+	fonts-wqy-microhei \
 	${JELLYFIN} \
 	jellyfin-ffmpeg \
 	jellyfin-server \
