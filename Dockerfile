@@ -4,7 +4,7 @@ FROM lsiobase/ubuntu:focal
 # ARG BUILD_DATE
 # ARG VERSION
 # ARG JELLYFIN_RELEASE
-LABEL build_version="sleepgod version:nightly Build-date:20210610095139"
+LABEL build_version="sleepgod version:nightly Build-date:20210611094049"
 LABEL maintainer="sleepgod"
 
 # environment settings
