@@ -31,4 +31,4 @@ jobs:
       - name: Package Trigger Scheduler
         run: |
           echo "**** Notifying Discord ****"
-          curl -H "Content-Type: application/json" --data '{"docker_tag": "latest"}' -X POST https://hub.docker.com/api/build/v1/source/37845e6a-9178-42a1-9fdb-f74e1698f35c/trigger/dc84829d-2e4b-4ffe-9341-b5030bd688d9/call/
+          curl -H "Content-Type: application/json" -X POST http://baota.dwx.ink:8888/hook?access_key=DSuRj3rz9hbhVNkPXxUYrClxVwq1NXKTskuoz1RCayxNW4eP&param=ok
