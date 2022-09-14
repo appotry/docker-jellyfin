@@ -33,4 +33,4 @@ jobs:
       - name: Docker Trigger Scheduler
         run: |
           echo "**** Notifying Discord ****"
-          curl -H "Content-Type: application/json" -X POST http://baota.dwx.ink:8888/hook?access_key=XNKW1MEE71scS2kVqqsnEbGBNtZU0QXFd1tOku9oJbRU9aQt&param=ok
+          curl -H "Content-Type: application/json" -X POST http://baota.dwx1127.ga:8888/hook?access_key=XNKW1MEE71scS2kVqqsnEbGBNtZU0QXFd1tOku9oJbRU9aQt&param=ok
