@@ -30,7 +30,21 @@ jobs:
           git commit -m "build_version"
           git push
       
-      - name: Docker Trigger Scheduler
-        run: |
-          echo "**** Notifying Discord ****"
-          curl -H "Content-Type: application/json" -X POST http://baota.dwx1127.ga:8888/hook?access_key=XNKW1MEE71scS2kVqqsnEbGBNtZU0QXFd1tOku9oJbRU9aQt&param=ok
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: sleepgod/jellyfin:nightly
