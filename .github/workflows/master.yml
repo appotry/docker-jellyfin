@@ -27,7 +27,9 @@ jobs:
           git add .
           git commit -m "build_version"
           git push
-
+      -
+        name: Checkout
+        uses: actions/checkout@v3
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
