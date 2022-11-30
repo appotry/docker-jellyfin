@@ -46,8 +46,3 @@ jobs:
         with:
           push: true
           tags: sleepgod/jellyfin:latest
-
-      - name: Package Trigger Scheduler
-        run: |
-          echo "**** Notifying Discord ****"
-          curl -H "Content-Type: application/json" -X POST http://baota.dwx1127.ga:8888/hook?access_key=DSuRj3rz9hbhVNkPXxUYrClxVwq1NXKTskuoz1RCayxNW4eP&param=ok
