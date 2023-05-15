@@ -17,7 +17,7 @@ jobs:
           sudo timedatectl set-timezone "Asia/Shanghai"
           
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - run: |
           dt=`date +%Y%m%d%H%M%S`
           echo $dt
