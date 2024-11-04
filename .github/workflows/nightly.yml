@@ -2,8 +2,8 @@ name: Build jellyfin nightly
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 30 0 * * *
+  # schedule:
+  #   - cron: 30 0 * * *
 
 jobs:
   Docker-trigger-scheduler:
