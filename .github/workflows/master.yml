@@ -17,7 +17,7 @@ jobs:
           sudo timedatectl set-timezone "Asia/Shanghai"
           
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - run: |
           dt=`date +%Y%m%d%H%M%S`
           echo $dt
@@ -27,8 +27,24 @@ jobs:
           git add .
           git commit -m "build_version"
           git push
-      
-      - name: Package Trigger Scheduler
-        run: |
-          echo "**** Notifying Discord ****"
-          curl -H "Content-Type: application/json" -X POST http://baota.dwx.ink:8888/hook?access_key=DSuRj3rz9hbhVNkPXxUYrClxVwq1NXKTskuoz1RCayxNW4eP&param=ok
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: sleepgod/jellyfin:latest
